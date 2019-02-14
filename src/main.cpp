@@ -32,9 +32,14 @@ std::string hasData(std::string s) {
 
 int main(int argc, char *argv[])
 {
-  double init_Kp = atof(argv[1]);
-  double init_Ki = atof(argv[2]);
-  double init_Kd = atof(argv[3]);
+  double init_Kp = 0.2;
+  double init_Ki = 0.0000009;
+  double init_Kd = 12.8;
+  if (argc == 4) {
+     init_Kp = atof(argv[1]);
+     init_Ki = atof(argv[2]);
+     init_Kd = atof(argv[3]);
+  }
   uWS::Hub h;
 
   PID pid;
